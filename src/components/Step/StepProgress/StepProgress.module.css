@@ -1,0 +1,50 @@
+.registerTitle {
+  margin-bottom: 1.3em;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 540px;
+  margin-bottom: 3em;
+}
+
+.progressGroup {
+  display: flex;
+}
+
+.progressIcon {
+  position: relative;
+  border: 2px solid #333;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.progressIcon>.text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.completeIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.progressBar {
+  height: 1.5px;
+  width: 60px;
+  background-color: #999;
+}
+
+.progressLabel {
+  /* color: #AFB1BD; */
+}

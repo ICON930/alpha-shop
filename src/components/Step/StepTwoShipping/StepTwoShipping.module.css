@@ -1,0 +1,38 @@
+form {
+  height: 350px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.formTitle {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.formBodyItem {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.radioGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  height: 60px;
+  width: 80%;
+  padding: 0 20px;
+}
+
+.inputStyle {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.radioBoxBorder {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
