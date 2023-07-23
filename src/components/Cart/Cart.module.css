@@ -1,0 +1,75 @@
+.productContainer {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  position: relative;
+}
+.productContainer .productImgContainer {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+.productContainer .productInfo {
+  flex: 1;
+}
+.productContainer .productInfo .productName {
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.productContainer .productInfo .productControlContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px 20px;
+}
+.productContainer .productInfo .productControlContainer .productControl {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.productContainer .productInfo .productControlContainer .productControl .minusButton,
+.productContainer .productInfo .productControlContainer .productControl .plusButton:hover {
+  cursor: pointer;
+}
+.productContainer .productInfo .productControlContainer .productControl .productCount {
+  font-size: 16px;
+  margin: 0 30px;
+}
+.productContainer .productInfo .productPrice {
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 35px;
+  right: 0;
+}
+
+.cartContainer {
+  margin-top: 20%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+.cartContainer .cartTitle {
+  font-weight: bold;
+}
+.cartContainer .cartInfo {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 16px;
+  padding: 20px 10px;
+}
+.cartContainer .cartInfo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background-color: #ccc;
+  width: 400px;
+  left: 10px;
+}
+.cartContainer .cartInfo .price {
+  font-size: 16px;
+  font-weight: bold;
+}/*# sourceMappingURL=Cart.module.css.map */

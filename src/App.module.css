@@ -1,0 +1,21 @@
+.mainContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0.2em 4em;
+}
+
+.formContainer {
+  width: 540px;
+  box-sizing: border-box;
+}
+
+.step {
+  /* border: 0.5rem solid purple; */
+  width: 40%;
+}
+
+.cart {
+  /* border: 0.5rem solid purple; */
+  width: 33%;
+}

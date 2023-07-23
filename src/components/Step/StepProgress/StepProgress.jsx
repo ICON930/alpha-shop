@@ -2,11 +2,9 @@ import styles from "./StepProgress.module.css"
 import  { ReactComponent as PgComplete } from "../../../icons/pg-complete.svg"
 
 export default function StepProgress () {
-  const registerTitle = <h2 className={styles.registerTitle}>結帳</h2>
-
   return(
     <div>
-      {registerTitle}
+      <h2 className={styles.registerTitle}>結帳</h2>
       <section className={styles.progressContainer}>
           <span className={styles.progressGroup} data-phase="address">
             <span className={styles.progressIcon}>
