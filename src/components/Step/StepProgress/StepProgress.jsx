@@ -1,9 +1,7 @@
 import styles from "./StepProgress.module.css"
 import  { ReactComponent as PgComplete } from "../../../icons/pg-complete.svg"
 
-export default function StepProgress (props) {
-  const { currentStep } = props;
-  
+export default function StepProgress ({ currentStep }) {
   return (
     <div>
       <h2 className={styles.registerTitle}>結帳</h2>
