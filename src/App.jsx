@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './App.module.css';
 import StepProgress from './components/Step/StepProgress/StepProgress';
 import StepOneAddress from './components/Step/StepOneAddress/StepOneAddress';
@@ -6,21 +7,24 @@ import StepThreePayment from './components/Step/StepThreePayment/StepThreePaymen
 import ProgressControl from './components/Step/ProgressControl/ProgressControl';
 import Cart from './components/Cart/Cart';
 
-export default function App () {
+export default function App() {
+  const [step, setStep] = useState(1);
+  const handleStepChange = (newStep) => setStep(newStep);
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.step}>
-        <StepProgress/>
+        <StepProgress currentStep={step} />
         <section className={styles.formContainer}>
-          {/* <StepOneAddress/> */}
-          {/* <StepTwoShipping/> */}
-          <StepThreePayment/>
+          {step === 1 && <StepOneAddress />}
+          {step === 2 && <StepTwoShipping />}
+          {step === 3 && <StepThreePayment />}
         </section>
-        <ProgressControl/> 
+        <ProgressControl currentStep={step} onStepChange={handleStepChange} />
       </div>
       <div className={styles.cart}>
         <Cart/>
       </div>
     </div>
-  )
+  );
 }
