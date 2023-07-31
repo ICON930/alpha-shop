@@ -6,7 +6,7 @@ export default function StepTwoShipping () {
       <h3 className={styles.formTitle}>運送方式</h3>
       <section className={styles.fromBodyItem}>
         <label className={styles.radioGroup} data-price="0">
-          <input className={styles.inputStyle} id="shipping-standard" type="radio" name="shipping" checked />
+          <input className={styles.inputStyle} id="shipping-standard" type="radio" name="shipping" defaultChecked />
           <div className={styles.radioInfo}>
             <div>
               <div className={styles.text}>標準運送</div>
