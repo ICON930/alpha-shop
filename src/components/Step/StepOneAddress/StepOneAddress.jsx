@@ -9,8 +9,8 @@ export default function StepOneAddress () {
           <div className={styles.inputGroup1}>
             <div className={styles.inputLabel}>稱謂</div>
             <div className={styles.selectContainer}>
-              <select className={styles.selectStyle}>
-                <option value="mr" selected>先生</option>
+              <select  defaultValue="mr" className={styles.selectStyle}>
+                <option value="mr">先生</option>
                 <option value="ms">女士</option>
                 <option value="mx">不明</option>
               </select>
@@ -34,7 +34,7 @@ export default function StepOneAddress () {
         <div className={styles.formBodyItem}>
           <div className={styles.inputGroup1}>
             <div className={styles.inputLabel}>縣市</div>
-            <div class="select-container">
+            <div className="select-container">
               <select className={styles.selectStyle} required>
                 <option value="">請選擇縣市</option>
                 <option value="KLU">基隆市</option>
