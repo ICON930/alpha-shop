@@ -1,14 +1,28 @@
+import { useContext } from 'react';
 import styles from './ProgressControl.module.css'
 import { ReactComponent as RightArrow} from '../../../icons/right-arrow.svg'
 import { ReactComponent as LeftArrow} from '../../../icons/left-arrow.svg'
+import CartContext from '../../context/CartContext';
+import StepContext from '../../context/StepContext';
 
 export default function ProgressControl ({currentStep, onStepChange}) {
+  const { totalPrice } = useContext(CartContext)
+  const { cardInfo } = useContext(StepContext)
+
   const handleNextStep = () => {
     onStepChange(currentStep + 1);
   };
 
   const handlePrevStep = () => {
     onStepChange(currentStep - 1);
+  };
+
+  const handleOrderConfirmation = () => {
+    console.log('購物車總金額 (小計) :', totalPrice);
+    console.log('持卡人姓名:', cardInfo.cardHolder);
+    console.log('卡號:', cardInfo.cardNumber);
+    console.log('有效期限:', cardInfo.expirationDate);
+    console.log('CVC / CCV:', cardInfo.cvc);
   };
 
   return (
@@ -42,7 +56,7 @@ export default function ProgressControl ({currentStep, onStepChange}) {
             <LeftArrow className={styles.leftArrow}/>
             上一步
           </button>
-          <button className={styles.next}>
+          <button className={styles.next} onClick={handleOrderConfirmation}>
             確認下單
           </button>
         </section>

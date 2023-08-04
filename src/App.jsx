@@ -6,6 +6,8 @@ import StepTwoShipping from './components/Step/StepTwoShipping/StepTwoShipping';
 import StepThreePayment from './components/Step/StepThreePayment/StepThreePayment';
 import ProgressControl from './components/Step/ProgressControl/ProgressControl';
 import Cart from './components/Cart/Cart';
+import { CartProvider } from './components/context/CartContext';
+import { StepProvider } from './components/context/StepContext';
 
 export default function App() {
   const [step, setStep] = useState(1);
@@ -13,18 +15,22 @@ export default function App() {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.step}>
-        <StepProgress currentStep={step} />
-        <section className={styles.formContainer}>
-          {step === 1 && <StepOneAddress />}
-          {step === 2 && <StepTwoShipping />}
-          {step === 3 && <StepThreePayment />}
-        </section>
-        <ProgressControl currentStep={step} onStepChange={handleStepChange} />
-      </div>
-      <div className={styles.cart}>
-        <Cart/>
-      </div>
+      <CartProvider>
+        <div className={styles.step}>
+          <StepProvider>
+            <StepProgress currentStep={step} />
+            <section className={styles.formContainer}>
+              {step === 1 && <StepOneAddress />}
+              {step === 2 && <StepTwoShipping />}
+              {step === 3 && <StepThreePayment />}
+            </section>
+            <ProgressControl currentStep={step} onStepChange={handleStepChange} />
+          </StepProvider>
+        </div>
+        <div className={styles.cart}>
+          <Cart/>
+        </div>
+      </CartProvider>
     </div>
   );
 }

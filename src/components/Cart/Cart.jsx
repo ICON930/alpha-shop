@@ -1,19 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import styles from './Cart.module.css';
 import CartItem from './CartItem';
-import { productsData } from './cartData';
+import CartContext from '../context/CartContext';
 
 export default function Cart() {
-  const [cartItems, setCartItems] = useState(productsData);
-
-  // 當商品數量變動時，重新計算總金額
-  useEffect(() => {
-    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    setTotalPrice(total);
-  }, [cartItems]);
-
-  const [totalPrice, setTotalPrice] = useState(0);
-
+  const { cartItems, setCartItems, totalPrice } = useContext(CartContext)
+  
   return (
     <section className={styles.cartContainer}>
       <h3 className={styles.cartTitle}>購物籃</h3>
@@ -27,5 +19,5 @@ export default function Cart() {
         <div className={styles.price}>${totalPrice}</div>
       </section>
     </section>
-  );
+  ); 
 }
